@@ -59,4 +59,12 @@ Output:
 ```bash
 [1] 53
 ```
+### Question 2
+--------------
+Use the data you loaded from Question 1. Consider the variable FES in the code book. Which of the "tidy data" principles does this variable violate? 
 
+#### Solution
+According to Codebook FES means 'Family type and employment status'. So it violates the rule 'Tidy data has one variable per column'
+
+### Question 3
+--------------
