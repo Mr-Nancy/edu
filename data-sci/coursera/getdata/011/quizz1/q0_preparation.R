@@ -9,3 +9,5 @@ ipak <- function(pkg){
 # usage
 packages <- c("data.table", "xlsx", "XML")
 ipak(packages) 
+
+setInternet2(TRUE)

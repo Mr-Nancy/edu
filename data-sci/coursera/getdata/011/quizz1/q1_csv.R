@@ -13,16 +13,17 @@ download <- function () {
   
   fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
   #download.file(fileUrl, destfile="./data/camera.csv", method="curl")
-  download.file(fileUrl, destfile="./data/csv_data.csv", method="internal")
+  download.file(fileUrl, destfile="./data/q1.csv", method="internal")
   list.files(".")
   
   date_downloaded <- date()
   date_downloaded
 }
 
-getData <- function() {
-  read.table("./data/csv_data.csv", sep = ",", header = TRUE)
+getSolution <- function() {
+  download()
   
+  data <- read.table("./data/csv_data.csv", sep = ",", header = TRUE)
   # How many properties are worth $1,000,000 or more? 
   nrow(data[data$VAL==24 & !is.na(data$VAL), ])
 }
