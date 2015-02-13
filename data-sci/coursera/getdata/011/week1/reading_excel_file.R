@@ -20,6 +20,6 @@ downloadExcel <- function () {
 
 getDataFromXLSX <- function() {
   library(xlsx)
-  cameraData <- read.xlsx("./data/cameras.xlsx")
+  cameraData <- read.xlsx("./data/cameras.xlsx", sheetIndex=1, header=TRUE)
   head(cameraData)
 }
