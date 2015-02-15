@@ -1,0 +1,12 @@
+# Using the same data frame you created in the previous problem, what is the equivalent function to unique(acs$AGEP)
+library(sqldf)
+
+gold <- unique(acs$REGION)
+query1 <- sqldf("select distinct REGION from acs")
+query2 <- sqldf("select REGION where unique from acs")
+query3 <- sqldf("select unique * from acs")
+query4 <- sqldf("select unique REGION from acs")
+identical(gold, query1)
+identical(gold, query2)
+identical(gold, query3)
+identical(gold, query4)

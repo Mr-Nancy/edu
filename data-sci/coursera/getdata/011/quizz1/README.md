@@ -68,3 +68,9 @@ According to Codebook FES means 'Family type and employment status'. So it viola
 
 ### Question 3
 --------------
+
+### Question 4
+--------------
+
+### Question 5
+--------------

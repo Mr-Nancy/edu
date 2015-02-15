@@ -23,7 +23,7 @@ download <- function () {
 getSolution <- function() {
   download()
   
-  data <- read.table("./data/csv_data.csv", sep = ",", header = TRUE)
+  data <- read.table("./data/q1.csv", sep = ",", header = TRUE)
   # How many properties are worth $1,000,000 or more? 
   nrow(data[data$VAL==24 & !is.na(data$VAL), ])
 }
