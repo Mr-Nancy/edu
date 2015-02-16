@@ -1,14 +1,19 @@
 getDataFromXML <- function() {
   library(XML)
-  fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
+  fileUrl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
   doc <- xmlTreeParse(fileUrl, useInternal=TRUE)
+  doc <- xmlInternalTreeParse(fileUrl)
   rootNode <- xmlRoot(doc)
   xmlName(rootNode)
   names(rootNode)
   
-  rootNode[[2]][[1]]
+  rootNode[[1]][[1]]
   
-  xmlSApply(rootNode, xmlValue)
+  zipcode <- xpathSApply(rootNode, "//zipcode", xmlValue)
+  table(zipcode == 21231)
+  
+  # FALSE  TRUE 
+  # 1200   127
   
   # XPath
   #xpathSApply(rootNode, "//name", xmlValue)
