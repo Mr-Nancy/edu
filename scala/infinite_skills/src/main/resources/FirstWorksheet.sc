@@ -29,6 +29,8 @@ object FirstWorksheet {
   }                                               //> greet: (name: String)Unit
   greet("Dima")                                   //> Hello, Dima
   
+  
+  // Recursion
   def factorial (n: Int): Int = if (n<2) 1 else n*factorial(n-1)
                                                   //> factorial: (n: Int)Int
   factorial(3)                                    //> res2: Int = 6
@@ -43,6 +45,23 @@ object FirstWorksheet {
     }
     helper (n)/n*4
   }                                               //> estimatePi: (n: Int)Double
+  // Stack overflow here
+  estimatePi(4000)                                //> res3: Double = 3.129
   
-  estimatePi(2000)                                //> res3: Double = 3.19
+  // Tail Recursion
+  import scala.annotation._
+  def estimatePiTail(n: Int): Double = {
+    @tailrec
+    def helper (n: Int, sum: Double): Double = {
+    	if (n<1) sum else {
+    		val x = math.random
+    		val y = math.random
+    		helper(n-1, sum + (if (x*x + y*y < 1) 1 else 0))
+    	}
+    }
+    helper (n, 0)/n*4
+  }                                               //> estimatePiTail: (n: Int)Double
+  
+  estimatePiTail(100000000)                       //> res4: Double = 3.14166456
+  
 }
