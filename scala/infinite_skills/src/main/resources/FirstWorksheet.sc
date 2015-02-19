@@ -46,7 +46,7 @@ object FirstWorksheet {
     helper (n)/n*4
   }                                               //> estimatePi: (n: Int)Double
   // Stack overflow here
-  estimatePi(4000)                                //> res3: Double = 3.129
+  estimatePi(4000)                                //> res3: Double = 3.118
   
   // Tail Recursion
   import scala.annotation._
@@ -62,6 +62,6 @@ object FirstWorksheet {
     helper (n, 0)/n*4
   }                                               //> estimatePiTail: (n: Int)Double
   
-  estimatePiTail(100000000)                       //> res4: Double = 3.14166456
+  estimatePiTail(100000000)                       //> res4: Double = 3.14170844
   
 }
