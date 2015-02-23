@@ -17,7 +17,7 @@ create_dir <- function () {
 }
 
 # usage
-packages <- c("data.table")
+packages <- c("data.table", "plyr")
 ipak(packages) 
 
 setInternet2(TRUE)
