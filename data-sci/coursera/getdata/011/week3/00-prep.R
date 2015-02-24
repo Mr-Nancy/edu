@@ -1,5 +1,5 @@
-# setwd("D:\\work\\workspace\\edu\\edu\\data-sci\\coursera\\getdata\\011\\quizz3")
-# setwd("E:\\Work\\workspace\\edu\\edu\\data-sci\\coursera\\getdata\\011\\quizz3")
+# setwd("D:\\work\\workspace\\edu\\edu\\data-sci\\coursera\\getdata\\011\\week3")
+# setwd("E:\\Work\\workspace\\edu\\edu\\data-sci\\coursera\\getdata\\011\\week3")
 
 ipak <- function(pkg){
   new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
@@ -17,7 +17,7 @@ create_dir <- function () {
 }
 
 # usage
-packages <- c("data.table", "plyr", "Hmisc", "jpeg")
+packages <- c("data.table", "plyr", "Hmisc")
 ipak(packages) 
 
 setInternet2(TRUE)
