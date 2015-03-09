@@ -24,17 +24,17 @@ object Collections {
   val arr2 = Array.fill(12)(26)                   //> arr2  : Array[Int] = Array(26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26)
   val arrStr = Array.fill(12)("hi")               //> arrStr  : Array[String] = Array(hi, hi, hi, hi, hi, hi, hi, hi, hi, hi, hi, 
                                                   //| hi)
-  val arrRand = Array.fill(10)(math.random)       //> arrRand  : Array[Double] = Array(0.13244452183510624, 0.042150764504762406, 
-                                                  //| 0.6165786181860554, 0.8521843484109988, 0.8582231401432147, 0.60330575590705
-                                                  //| 69, 0.7122441262990546, 0.8784499538244235, 0.9723419473220972, 0.7570906314
-                                                  //| 938873)
+  val arrRand = Array.fill(10)(math.random)       //> arrRand  : Array[Double] = Array(0.3075636440846292, 0.9825324859722941, 0.4
+                                                  //| 815089609838171, 0.08129163579904064, 0.5849252821604438, 0.5798785438157529
+                                                  //| , 0.6587682595450589, 0.8477099008298724, 0.3131443534826497, 0.189838333689
+                                                  //| 40817)
   def littleArray(i: Int): Array[Int] = Array(i, i, i)					// Pass function return value as an argument, reuslt of util.Random.nextInt(10)
                                                   //> littleArray: (i: Int)Array[Int]
-  littleArray(util.Random.nextInt(10))            //> res5: Array[Int] = Array(9, 9, 9)
+  littleArray(util.Random.nextInt(10))            //> res5: Array[Int] = Array(7, 7, 7)
   
   def littleArrayRocket(i: => Int): Array[Int] = Array(i, i, i) // Pass function as an argument, below - util.Random.nextInt(10)
                                                   //> littleArrayRocket: (i: => Int)Array[Int]
-  littleArrayRocket(util.Random.nextInt(10))      //> res6: Array[Int] = Array(0, 2, 3)
+  littleArrayRocket(util.Random.nextInt(10))      //> res6: Array[Int] = Array(8, 7, 0)
   
   // Using Lambda to initialize Array
   val arr3 = Array.tabulate(10)(i => i)           //> arr3  : Array[Int] = Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
@@ -54,4 +54,7 @@ object Collections {
   (1).+(2)                                        //> res11: Int(3) = 3
   (1).to(10)                                      //> res12: scala.collection.immutable.Range.Inclusive = Range(1, 2, 3, 4, 5, 6,
                                                   //|  7, 8, 9, 10)
+  
+  arr ++ arr3                                     //> res13: Array[Int] = Array(99, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+  arr ++: arr3                                    //> res14: Array[Int] = Array(99, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 }
